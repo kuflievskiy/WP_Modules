@@ -33,3 +33,6 @@ Developers are welcome to create pull requests here.
 	bash wp-module create app-module new-sample-module
 	bash wp-module create app-module-controller sample-controller
 ```
+
+- [ ] Add Symfony Migration mechanism.
+- [ ] Add Routing module based on WordPress rewrite rules WP_Modules_Skeleton\Route

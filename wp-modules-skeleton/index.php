@@ -1,6 +1,7 @@
 <?php
 /**
  * Main App file
+ *
  * @package SMD Application
  * */
 
@@ -18,7 +19,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  *
  * @link https://make.wordpress.org/core/handbook/coding-standards/php/
  * */
- 
+
 
 require_once ABSPATH . 'wp-content/mu-plugins/wp-modules/bootstrap.php';
 

@@ -1,9 +1,6 @@
 <?php
 /**
  * Config
- *
  * */
 
-return [
-
-];
+return [];

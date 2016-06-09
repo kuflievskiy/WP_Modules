@@ -1,0 +1,67 @@
+# NOTE: It is not absolutely required (but highly recommended) that you have: `ignorecase = true`
+# in your `.gitconfig` file to maximize compatibility with some of these exclusion patterns.
+
+# ignore all files that start with ~
+~*
+
+# ignore all files starting with .
+.*
+
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
+!.gitattributes
+!phpcs.ruleset.xml
+!phpmd.ruleset.xml
+!phpunit.xml
+
+# Local Dev
+.~*
+
+# Backups
+*~
+*.bak
+
+# phpStorm IDE ignoring
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore OS generated files
+$RECYCLE.BIN/
+Desktop.ini
+Thumbs.db
+ehthumbs.db
+
+# Mac Files
+.Spotlight-V100
+.AppleDouble
+.LSOverride
+.DS_Store
+.Trashes
+Icon?
+!Icons
+._*
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+wp-modules/vendor/*

@@ -1,0 +1,3 @@
+services:
+    sample-module:
+        class:	WP_Modules_Skeleton\Sample_Module\Sample_Module

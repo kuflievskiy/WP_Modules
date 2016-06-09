@@ -1,7 +1,6 @@
 <?php
 /**
  * Your server crontab could now look something like: * * * * * wget --no-check-certificate -O /dev/null https://%SITE_DOMAIN%/wp-content/mu-plugins/app/cron.php?secret_key=%SMD_SECRET_KEY% >/dev/null 2>&1
- *
  * */
 
 require_once strstr( __FILE__, 'wp-content', true ) . 'wp-load.php';

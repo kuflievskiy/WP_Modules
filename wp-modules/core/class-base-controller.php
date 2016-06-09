@@ -1,6 +1,7 @@
 <?php
 /**
  * Class Base_Controller
+ *
  * @package App
  */
 
@@ -55,7 +56,6 @@ abstract class Base_Controller {
 
 	/**
 	 * Initialize module path
-	 *
 	 */
 	function __construct() {
 
@@ -323,8 +323,7 @@ abstract class Base_Controller {
 	protected function send_response( $data ) {
 
 		$this->build_response( $data )->send();
-		//wp_send_json( $data );
-
+		// wp_send_json( $data );
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 			wp_die();
 		}

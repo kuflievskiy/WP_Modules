@@ -1,6 +1,7 @@
 <?php
 /**
  * Class Base_Model
+ *
  * @package App
  */
 
@@ -43,7 +44,6 @@ abstract class Base_Model {
 		$module_path = $this->get_module_path();
 		$dao_folder_path = $module_path . '/dao';
 
-		
 		$reflector = new \ReflectionClass( get_class( $this ) );
 		$model_class_namespace = $reflector->getNamespaceName();
 
@@ -55,11 +55,11 @@ abstract class Base_Model {
 
 		foreach ( $iter as $path => $dir ) {
 			if ( ! $dir->isDir() ) {
-				
+
 				$DAO_file_name = basename( $path );
 				$cleared_file_name = str_replace( [ 'class-', '.php' ], '', $DAO_file_name );
-				$DAO_class_name = $this->build_name_DAO( $cleared_file_name );						
-				$this->dao[$cleared_file_name] = $model_class_namespace . '\\DAO\\' . $DAO_class_name;
+				$DAO_class_name = $this->build_name_DAO( $cleared_file_name );
+				$this->dao[ $cleared_file_name ] = $model_class_namespace . '\\DAO\\' . $DAO_class_name;
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 <?php
 /**
  * App
+ *
  * @package App
  */
 
@@ -23,12 +24,14 @@ class App {
 
 	/**
 	 * App
+	 *
 	 * @var object
 	 */
 	public static $container_builder;
 
 	/**
 	 * App
+	 *
 	 * @var $db_connections
 	 */
 	private static $db_connections = [];
@@ -40,6 +43,7 @@ class App {
 
 	/**
 	 * Function get_container_builder
+	 *
 	 * @link http://symfony.com/doc/current/components/dependency_injection/introduction.html
 	 * @link https://github.com/symfony/dependency-injection
 	 * http://symfony.com/doc/current/components/dependency_injection/compilation.html

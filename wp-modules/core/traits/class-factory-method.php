@@ -1,6 +1,7 @@
 <?php
 /**
  * Trait Factory_Method
+ *
  * @package App\Traits
  */
 
@@ -10,6 +11,7 @@ trait Factory_Method {
 
 	/**
 	 * Factory
+	 *
 	 * @var array
 	 */
 	public static $instances = array();

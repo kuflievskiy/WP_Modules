@@ -1,26 +1,26 @@
 <?php
 /**
  * Autoload MU Plugins
+ *
  * @package App
  */
 
 namespace WP_Modules;
 
-if ( ! class_exists( 'Autoload_WP_Modules' ) ) {
-
-	new Autoload_WP_Modules;
+if ( ! class_exists( 'Autoload' ) ) {
 
 	/**
-	 * Class Autoload_WP_Modules
-	 * This class is used as a generic autoloader for MU plugins
+	 * Class Autoload
+	 * This class is used as a generic Autoloader for MU plugins
+	 *
 	 * @author : Kuflievskiy Aleksey <kuflievskiy@gmail.com>
 	 * @version : 1.0.0
-	 * Example : '\Dashboard_Analytics\Dashboard_Analytics_Admin' => 'dashboard-analytics/class-dashboard-analytics-admin'
 	 */
-	class Autoload_WP_Modules {
+	class Autoload {
 
 		/**
 		 * Factory
+		 *
 		 * @var array
 		 */
 		public $mu_plugins;
@@ -75,4 +75,7 @@ if ( ! class_exists( 'Autoload_WP_Modules' ) ) {
 			return $directories;
 		}
 	}
+
+	new Autoload;
+
 }

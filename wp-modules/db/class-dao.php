@@ -1,6 +1,7 @@
 <?php
 /**
  * App
+ *
  * @package App
  */
 
@@ -8,6 +9,7 @@ namespace WP_Modules\Db;
 
 /**
  * Interface I_DAO
+ *
  * @package App
  */
 interface I_DAO {
@@ -108,7 +110,7 @@ interface I_DAO {
 	 * Function set_field_to_null
 	 *
 	 * @param $field_name
-	 * @param array $where
+	 * @param array      $where
 	 *
 	 * @return bool|false|int
 	 */
@@ -131,12 +133,14 @@ abstract class DAO implements I_DAO {
 
 	/**
 	 * DAO
+	 *
 	 * @var \wpdb
 	 */
 	protected $db;
 
 	/**
 	 * DAO
+	 *
 	 * @var string
 	 */
 	protected $table_name;
@@ -362,7 +366,7 @@ abstract class DAO implements I_DAO {
 	 * Function set_field_to_null
 	 *
 	 * @param $field_name
-	 * @param array $where
+	 * @param array      $where
 	 *
 	 * @return bool|false|int
 	 */

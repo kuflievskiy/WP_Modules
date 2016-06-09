@@ -1,6 +1,7 @@
 <?php
 /**
  * Form template
+ *
  * @package Setting\Templates
  */
 

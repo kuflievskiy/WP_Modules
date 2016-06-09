@@ -4,7 +4,6 @@ namespace WP_Modules\Core;
 /**
  * Class Admin_Logo
  * This class is used to customize wp logo on the admin login page.
- *
  */
 final class Admin_Logo {
 
@@ -12,7 +11,6 @@ final class Admin_Logo {
 
 	/**
 	 * Construct
-	 *
 	 * */
 	public function __construct() {
 		if ( is_admin() or 'wp-login.php' == basename( filter_input( INPUT_SERVER, 'PHP_SELF', FILTER_SANITIZE_STRING ) ) ) {
@@ -23,7 +21,6 @@ final class Admin_Logo {
 	/**
 	 * Function init
 	 * This function is used to add wp hooks.
-	 *
 	 * */
 	public function init() {
 		// @todo : we should fetch logo URL from the option, get rid of the hardcoded path.
@@ -45,6 +42,7 @@ final class Admin_Logo {
 	/**
 	 * Function custom_login_logo
 	 * This function is used to replace default wp-logo with nix-framework logo.
+	 *
 	 * @return void
 	 * */
 	public function custom_login_logo() {

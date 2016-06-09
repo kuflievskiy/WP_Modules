@@ -1,6 +1,7 @@
 <?php
 /**
  * Trait Singleton
+ *
  * @package App\Traits
  */
 
@@ -10,6 +11,7 @@ trait Singleton {
 
 	/**
 	 * Static singleton instance
+	 *
 	 * @var object $instance
 	 */
 	protected static $instance;

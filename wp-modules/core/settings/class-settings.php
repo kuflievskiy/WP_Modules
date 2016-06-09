@@ -1,6 +1,7 @@
 <?php
 /**
  * Settings
+ *
  * @package Settings
  */
 
@@ -19,18 +20,21 @@ class Settings {
 
 	/**
 	 * Page slug
+	 *
 	 * @var object
 	 */
 	private $page_slug;
 
 	/**
 	 * Settings
+	 *
 	 * @var object
 	 */
 	private $config;
 
 	/**
 	 * Function __construct
+	 *
 	 * @param $page_slug
 	 * @param $config
 	 */

@@ -24,18 +24,16 @@ final class Admin_Logo {
 	 * */
 	public function init() {
 		// @todo : we should fetch logo URL from the option, get rid of the hardcoded path.
-		$logo_relative_path = '/images/minisite/logo.png';
-		$theme_root = get_template_directory();
+		$logo_URL = site_url( '/wp-admin/images/wordpress-logo.svg' );				
+		$logo_ABSPATH = ABSPATH . 'wp-admin/images/wordpress-logo.svg';
 
-		$logo_URL = get_bloginfo( 'template_directory' ) . $logo_relative_path;
-		$logo_ABSPATH = $theme_root . $logo_relative_path;
-		if ( file_exists( $logo_ABSPATH ) ) {
+		if ( file_exists( $logo_ABSPATH ) ) {			
 			$this->logo = $logo_URL;
-			add_action( 'login_head', array( $this, 'custom_login_logo' ) );
-			// changing link wordpress.org
-			add_filter( 'login_headerurl', create_function( '', 'return get_home_url();' ) );
-			// remove title
-			add_filter( 'login_headertitle', create_function( '', 'return false;' ) );
+			add_action( 'login_head', [ $this, 'custom_login_logo' ] );
+			// Changing link wordpress.org.
+			add_filter( 'login_headerurl', function() { return get_home_url(); } );
+			// Changing title.
+			add_filter( 'login_headertitle', function() { return get_bloginfo( 'name' ); } );
 		}
 	}
 

@@ -5,7 +5,7 @@
 
 require_once strstr( __FILE__, 'wp-content', true ) . 'wp-load.php';
 
-if ( SMD_SECRET_KEY !== filter_input( INPUT_GET, 'secret_key', FILTER_SANITIZE_STRING ) ) {
+if ( AUTH_KEY !== filter_input( INPUT_GET, 'key', FILTER_SANITIZE_STRING ) ) {
 	exit;
 }
 

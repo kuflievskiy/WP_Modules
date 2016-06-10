@@ -18,9 +18,7 @@ abstract class Cron {
 	 * Function __construct
 	 */
 	public function __construct() {
-		// @codingStandardsIgnoreStart
-		add_filter( 'cron_schedules', array( $this, 'cron_intervals' ) );
-		// @codingStandardsIgnoreEnd
+		add_filter( 'cron_schedules', [ $this, 'cron_intervals' ] );
 	}
 
 	/**

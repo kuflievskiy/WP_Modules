@@ -19,6 +19,10 @@ use WP_Modules\Core\Settings\Settings;
  */
 abstract class Base_Controller {
 
+	const ACTION_PREFIX = 'action';
+
+	protected $base_slug;
+
 	/**
 	 * Handle path of module
 	 *
@@ -94,8 +98,9 @@ abstract class Base_Controller {
 			}
 		}
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ), 99 );
-		add_action( 'plugins_loaded', array( $this, 'register_lang' ) );
+		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ], 99 );
+		add_action( 'plugins_loaded', [ $this, 'register_lang' ] );
+		add_action( 'init', [ $this, 'init_rewrite_rules' ] );
 	}
 
 	/**
@@ -371,6 +376,31 @@ abstract class Base_Controller {
 	public function remove_admin_bar() {
 
 		remove_action( 'wp_head', '_admin_bar_bump_cb' );
+	}
+
+	public function init_rewrite_rules() {
+
+		if ( ! empty( $this->base_slug ) ) {
+			global $wp;
+			$wp->add_query_var( 'controller' );
+			$wp->add_query_var( 'action' );
+
+			add_rewrite_rule( '^' . $this->base_slug . '/([^/]*)/?', 'index.php?controller=' . $this->base_slug . '&action=$matches[1]', 'top' );
+
+			// Once you get working, remove this next line
+			// global $wp_rewrite;
+			//$wp_rewrite->flush_rules();
+
+			add_action( 'wp', [ $this, 'run_rewrite_action' ] );
+		}
+	}
+
+	public function run_rewrite_action() {
+		$controller = get_query_var( 'controller' );
+		$action     = get_query_var( 'action' );
+		if ( $controller == $this->base_slug && ! empty( $action ) && is_callable( [ $this, self::ACTION_PREFIX . '_' . $action ] ) ) {
+			call_user_func( [ $this, self::ACTION_PREFIX . '_' . $action ] );
+		}
 	}
 }
 

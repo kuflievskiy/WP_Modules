@@ -8,8 +8,13 @@
 namespace WP_Modules\Core;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\Config\FileLocator;
+
 use WP_Modules\Core\Traits\Factory_Method;
 use WP_Modules\Core\Fix\Fix;
+
 /**
  * Class App
  *
@@ -43,7 +48,7 @@ class App {
 
 	/**
 	 * Function get_container_builder
-	 *
+	 * Get DI container
 	 * @link http://symfony.com/doc/current/components/dependency_injection/introduction.html
 	 * @link https://github.com/symfony/dependency-injection
 	 * http://symfony.com/doc/current/components/dependency_injection/compilation.html
@@ -51,17 +56,20 @@ class App {
 	public static function get_container_builder() {
 		if ( null === self::$container_builder  ) {
 			self::$container_builder = new ContainerBuilder();
+			new Admin_Logo;
+			new Fix;		
 		}
 		return self::$container_builder;
 	}
 
-
 	/**
-	 * Function init
+	 * Function load_config
 	 */
-	public static function init() {
-		new Admin_Logo;
-		new Fix;
+	public static function load_config( $services_path ) {
+		if( file_exists( $services_path ) ) {
+			$loader = new YamlFileLoader( self::$container_builder, new FileLocator( __DIR__ ) );
+			$loader->load( $services_path );
+		}
 	}
 
 	/**

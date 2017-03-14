@@ -1,0 +1,10 @@
+{
+    "name": "kuflievskiy/WP_Modules",
+    "description": "Open Source WordPress Framework",
+    "authors": [
+        {
+            "name": "Aleksey Kuflievskiy",
+            "email": "kuflievskiy@gmail.com"
+        }
+    ]
+}

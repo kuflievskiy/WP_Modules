@@ -24,8 +24,8 @@ final class Admin_Logo {
 	 * */
 	public function init() {
 		// @todo : we should fetch logo URL from the option, get rid of the hardcoded path.
-		$logo_URL = site_url( '/wp-admin/images/wordpress-logo.svg' );				
-		$logo_ABSPATH = ABSPATH . 'wp-admin/images/wordpress-logo.svg';
+		$logo_URL = get_stylesheet_directory_uri() . '/images/logo.png';
+		$logo_ABSPATH = get_stylesheet_directory() . '/images/logo.png';
 
 		if ( file_exists( $logo_ABSPATH ) ) {			
 			$this->logo = $logo_URL;

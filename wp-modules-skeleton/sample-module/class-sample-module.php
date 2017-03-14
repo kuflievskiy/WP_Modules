@@ -23,6 +23,8 @@ class Sample_Module extends Base_Controller {
 		// $sample_DAO = $this->get_model()->get_DAO( 'sample-table' );
 		// $items = $sample_DAO->get_all();
 		// var_dump( $items );
+		
+		new Taxonomy\Sections;
 	}
 
 	/* Function action_test

@@ -85,7 +85,6 @@ abstract class Base_Model {
 	 */
 	// @codingStandardsIgnoreStart
 	public function get_DAO( $name ) {
-
 		if ( array_key_exists( $name, $this->dao ) ) {
 
 			return self::factory( $this->dao[ $name ] );

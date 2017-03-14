@@ -273,7 +273,6 @@ abstract class DAO implements I_DAO {
 		return $all;
 	}
 
-
 	/**
 	 * Function get_by
 	 *

@@ -1,0 +1,11 @@
+.delete-settings-image-button {
+    color:green;
+    vertical-align: top;
+}
+.delete-settings-image-button:hover {
+    color:red;
+    cursor:pointer;
+}
+.settings-image img {
+    padding-right: 10px;
+}

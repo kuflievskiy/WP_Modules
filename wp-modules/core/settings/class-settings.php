@@ -53,7 +53,7 @@ class Settings {
 	public function add_settings() {
 
 		// Adding settings page.
-		add_options_page( 'SMD Settings',   // Page title.
+		add_options_page( 'Settings Page',   // Page title.
 			$this->page_slug,                 // Menu title.
 			'manage_options',               // Apability.
 			$this->page_slug . '.php',             // Menu_slug.

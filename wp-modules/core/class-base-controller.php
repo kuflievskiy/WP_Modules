@@ -92,7 +92,7 @@ abstract class Base_Controller {
 
 		// Module Settings.
 		if ( file_exists( $settings_path ) ) {
-			$settings = include $settings_path;
+			$settings = include_once $settings_path;
 			if ( $settings && is_array( $settings ) ) {
 				new Settings( explode( '\\', static::class )[0], $settings );
 			}

@@ -6,7 +6,7 @@
  */
 
 ?>
-<h1>SMD Settings</h1>
+<h1>Settings Page</h1>
 <form method="POST" action="options.php">
 	<?php
 		// Pass slug name of page, also referred to in Settings API as option group name.

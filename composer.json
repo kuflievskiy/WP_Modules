@@ -1,7 +1,7 @@
 {
     "name": "kuflievskiy/wp_modules",
     "description": "Open Source WordPress Framework",
-    "type": "wordpress-muplugin",
+    "type": "package",
     "require": {
         "composer/installers": "~1.0"
     },
